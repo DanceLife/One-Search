@@ -16,10 +16,10 @@ const appRoutes: Routes = [
   ]},
   {path: "Search", component: SearchComponent},
   {path: "About", component: BrandComponent},
-  {path: "Actions", component: ActionsComponent,children:[
-    {path: "Action", component: ActionComponent},
-    {path: "Another_Action", component: AnotherActionComponent},
-    {path: ":One_More_Action", component: OneMoreActionComponent}
+  {path: "Articles", component: ActionsComponent,children:[
+    {path: "Gardening", component: ActionComponent},
+    {path: "Space_Exploration", component: OneMoreActionComponent},
+    {path: "Dancing_Beneficts", component: AnotherActionComponent}
   ]},
   ];
 
