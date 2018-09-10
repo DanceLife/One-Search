@@ -7,7 +7,10 @@ import { SearchComponent } from './search/search.component';
 import { ActionComponent } from './actions/action/action.component';
 import { AnotherActionComponent } from './actions/another-action/another-action.component';
 import { OneMoreActionComponent } from './actions/one-more-action/one-more-action';
-import { ActionsComponent } from './actions/actions.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { DancingBenefitsComponent } from './articles/dancing-benefits/dancing-benefits.component';
+import { GardeningComponent } from './articles/gardening/gardening.component';
+import { SpaceTravelingComponent } from './articles/space-traveling/space-traveling.component';
 
 const appRoutes: Routes = [
   {path: "Register", children:[
@@ -16,10 +19,10 @@ const appRoutes: Routes = [
   ]},
   {path: "Search", component: SearchComponent},
   {path: "About", component: BrandComponent},
-  {path: "Articles", component: ActionsComponent,children:[
-    {path: "Gardening", component: ActionComponent},
-    {path: "Space_Exploration", component: OneMoreActionComponent},
-    {path: "Dancing_Beneficts", component: AnotherActionComponent}
+  {path: "Articles", component: ArticlesComponent,children:[
+    {path: "Gardening", component: GardeningComponent},
+    {path: "Space_Traveling", component: SpaceTravelingComponent},
+    {path: "Dancing_Benefits", component: DancingBenefitsComponent}
   ]},
   ];
 

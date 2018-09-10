@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Http } from '@angular/http';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +12,10 @@ export class SearchService {
   newSearchResults: Subject<any>;
   queryString: string;
   newQueryString: Subject<any>;
+  baseUrl: string = 'https://api.github.com/search/code?q=';
+  repoUrl: string = '+repo:DanceLife/One-Search';
 
-
-  constructor() { 
+  constructor(private http: Http) { 
     this.newSearchResults = new Subject<any>();
     this.newQueryString = new Subject<any>(); 
     this.newQueryString
@@ -23,11 +27,24 @@ export class SearchService {
 
   runSearch(queryString){
     console.log("Running search on: ", queryString.value);
-    
-    //Search results to be entered instead of queryString after implementation.
-    this.searchResults = queryString.value;
-    this.newSearchResults.next(this.searchResults);
-}
+    //this.searchResults = this.searchEntries(queryString);
+    //this.searchResults = queryString.value;
+    this.searchEntries(queryString.value)
+    .subscribe(
+      (response)=>{
+        console.log("response");
+        console.log(response.json());
+
+        this.newSearchResults.next(response.json());
+      }
+    );
+  }
+
+
+  searchEntries(term) {
+    return this.http
+        .get(this.baseUrl + term + this.repoUrl) 
+      }
 
 
 }

@@ -6,7 +6,12 @@
   New entry (Hidden after implementation):  
 </p>
 <p> {{ queryString.value }} </p>
-
-<p *ngIf="searchResults">Search results are based on the previous entry: </p>
-<p>{{searchResults}}</p>
+<div *ngIf="searchResults">
+  <p >Search results based on the previous entry </p>
+<p>Total count: {{searchResults.total_count}}</p>
+<p>Incomplete results: {{searchResults.incomplete_results}}</p>
+<div *ngFor="let item of searchResults.items">
+  <a href="{{item.path}}">{{item.path}}</a>
+</div>
+</div>
 

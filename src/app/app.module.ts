@@ -10,6 +10,12 @@ import { ActionComponent } from './actions/action/action.component';
 import { AnotherActionComponent } from './actions/another-action/another-action.component';
 import { OneMoreActionComponent } from './actions/one-more-action/one-more-action';
 import { ActionsComponent } from './actions/actions.component';
+import { HttpModule } from '@angular/http';
+import { CommonModule } from '@angular/common';
+import { ArticlesComponent } from './articles/articles.component';
+import { GardeningComponent } from './articles/gardening/gardening.component';
+import { SpaceTravelingComponent } from './articles/space-traveling/space-traveling.component';
+import { DancingBenefitsComponent } from './articles/dancing-benefits/dancing-benefits.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +27,16 @@ import { ActionsComponent } from './actions/actions.component';
     AnotherActionComponent,
     OneMoreActionComponent,
     SearchComponent,
+    ArticlesComponent,
+    GardeningComponent,
+    SpaceTravelingComponent,
+    DancingBenefitsComponent,
   ],
   imports: [
     BrowserModule,
     CoreModule,
-    AuthModule
+    AuthModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
