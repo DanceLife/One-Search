@@ -1,6 +1,6 @@
 ## See it live
 
-To see the project live [click here](https://dancelife.github.io/One-Theme/Register/Options/).
+To see the project live [click here](https://dancelife.github.io/One-Search/).
 
 ## Run it locally
 
