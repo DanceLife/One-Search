@@ -8,7 +8,8 @@ import { SearchService } from './search.service';
 })
 export class SearchComponent implements OnInit {
   queryString: any;
-  searchResults: any; 
+  searchResults: any;
+  apiLimitedExceeded: boolean; 
 
   constructor(private searchService: SearchService) { }
 
@@ -26,13 +27,17 @@ export class SearchComponent implements OnInit {
     this.searchResults = this.searchService.searchResults;
     this.searchService.newSearchResults
     .subscribe(
-      (newSearchResults)=>
+      (newSearchResults) =>
       {
-        this.searchResults = newSearchResults;
+        const message = newSearchResults.message ? newSearchResults.message : null;
+        if(message){
+            this.apiLimitedExceeded = true;
+            this.searchResults = message;
+          }else{
+            this.searchResults = newSearchResults;
+          }
       });
     
-    
-
   }
 
 

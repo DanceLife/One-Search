@@ -11,11 +11,10 @@ import { AnotherActionComponent } from './actions/another-action/another-action.
 import { OneMoreActionComponent } from './actions/one-more-action/one-more-action';
 import { ActionsComponent } from './actions/actions.component';
 import { HttpModule } from '@angular/http';
-import { CommonModule } from '@angular/common';
 import { ArticlesComponent } from './articles/articles.component';
-import { GardeningComponent } from './articles/gardening/gardening.component';
-import { SpaceTravelingComponent } from './articles/space-traveling/space-traveling.component';
-import { DancingBenefitsComponent } from './articles/dancing-benefits/dancing-benefits.component';
+import { GardeningComponent } from './gardening/gardening.component';
+import { SpaceComponent } from './space/space.component';
+import { DancingComponent } from './dancing/dancing.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +28,8 @@ import { DancingBenefitsComponent } from './articles/dancing-benefits/dancing-be
     SearchComponent,
     ArticlesComponent,
     GardeningComponent,
-    SpaceTravelingComponent,
-    DancingBenefitsComponent,
+    SpaceComponent,
+    DancingComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,13 +4,9 @@ import { OptionsComponent } from './options/options.component';
 import { EnvironmentComponent } from './environment/environment.component';
 import { BrandComponent } from './core/brand/brand.component';
 import { SearchComponent } from './search/search.component';
-import { ActionComponent } from './actions/action/action.component';
-import { AnotherActionComponent } from './actions/another-action/another-action.component';
-import { OneMoreActionComponent } from './actions/one-more-action/one-more-action';
-import { ArticlesComponent } from './articles/articles.component';
-import { DancingBenefitsComponent } from './articles/dancing-benefits/dancing-benefits.component';
-import { GardeningComponent } from './articles/gardening/gardening.component';
-import { SpaceTravelingComponent } from './articles/space-traveling/space-traveling.component';
+import { GardeningComponent } from './gardening/gardening.component';
+import { DancingComponent } from './dancing/dancing.component';
+import { SpaceComponent } from './space/space.component';
 
 const appRoutes: Routes = [
   {path: "Register", children:[
@@ -19,11 +15,9 @@ const appRoutes: Routes = [
   ]},
   {path: "Search", component: SearchComponent},
   {path: "About", component: BrandComponent},
-  {path: "Articles", component: ArticlesComponent,children:[
-    {path: "Gardening", component: GardeningComponent},
-    {path: "Space_Traveling", component: SpaceTravelingComponent},
-    {path: "Dancing_Benefits", component: DancingBenefitsComponent}
-  ]},
+  {path: "Gardening", component: GardeningComponent},
+  {path: "Space", component: SpaceComponent},
+  {path: "Dancing", component: DancingComponent}
   ];
 
 @NgModule({

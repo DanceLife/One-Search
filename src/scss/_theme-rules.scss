@@ -93,9 +93,6 @@ transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 .dropdown-item:hover {
     background-color:$navItemHover
  }
- @media (min-width: 768px){
-
-    .img{
-        max-width: 500px!important;        
-    }
-}
+ img{
+    max-width: 95%!important;        
+ }
