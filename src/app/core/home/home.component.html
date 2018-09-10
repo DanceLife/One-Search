@@ -12,21 +12,15 @@
         </div>
         <div class="row">
             <div class="col-sm">
-              <p>This one is a basic implementation of a search box. Angular solutions are single page applications or SPAs. SPAs and are not directly used in a context where search engine indexing is either a requirement or desirable. If you want your Angular solution to be parsed by a search engine you will have to ensure a template plus some precomposed content gets shipped by your server for all valid URLs in your solution. How you do this will vary depending on your server architecture.</p>
-            </div>
+              <p>This one is a basic implementation of a search box. There are some considerations to take into account when it comes to implementing a site search on an Angular solution. </p>
+              <p>Angular solutions are based on the concept of Single Page Applications, or SPA for short. As its name indicate this kind of applications has only a single page and the code behind (the application part of it) in charge of changing the page to become whatever the user is trying to access, usually by changing the URL, pressing a button or clicking on a URL. Once the user requests a “new page” the application dynamically rewrites the current page, and everything looks like if the user has navigated away into a new page, when no page reloading has ever happened in reality. This approach minimizes the interruptions related to reloading entire pages, with the responsiveness of a traditional desktop application, maintaining the look and feel of modern web applications, for a better user experience. </p>
+              <p>On the other hand, SPAs are not used on their base form in contexts where search engines indexing is either a requirement or desirable, since a search engine will only see a single and mostly empty page when crawling the application URL. </p>
+              <p>For an Angular solution to be parsed by a search engine one will have to ensure a template plus some precomposed content gets shipped by your server for all valid URLs in your solution. How you do this will vary depending on your server architecture. </p>
+              <p>To complicate matters a little bit more, some hosting services may not be supportive of server-side coding, wish is the case for GitHub.io, the service used to host the instance of the application you are currently looking at. </p>
+              <p>Conversely this scenario is ideal to illustrate how to make a site-search work for a SPA. GitHub.io is a place where an instance of your code, contained in a GitHub.com repository, is showed life. </p>
+              <p>Parsing the repository will allow us to find any search term entered by a user on the search box and return a collection of links the user can click to visit the live application. Again, the code is seating on GitHub.com while the application is being served at GitHub.io, so the root URL shall be modified accordingly when returned as part of the collection served on the search-results page. </p>
+              <p>Covering for the prove of concept, this site has been provisioned with a group of articles, each of them of different category as to contain different collections of keywords to be typed on the search box. This way entering the word soil may bring at least one page on a gardening article, while entering the word spaceship may bring a page on the search results related to space exploration. Of course, there will be common words that will bring pages related to different category of articles as well, as provably expected. </p>
+              <p>You could quickly navigate the different Articles to familiarize yourself with the kind of search results could be returned based on the entered search terms. </p>
+             </div>
         </div>
-      
-      <br/>
-      <h2>Here are some links with more: </h2>
-      <ul>
-        <li>
-          <h5><a target="_blank" rel="noopener" href="https://getbootstrap.com/docs/4.0/getting-started/theming/">Theming Bootstrap</a></h5>
-        </li>
-        <li>
-          <h5><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h5>
-        </li>
-        <li>
-          <h5><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h5>
-        </li>
-      </ul>
-      </div>
+</div>
