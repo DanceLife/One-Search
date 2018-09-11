@@ -20,11 +20,7 @@ export class SearchComponent implements OnInit {
     .subscribe(
       (queryString)=>{
         this.queryString = queryString;
-        console.log("new query string: ", this.queryString);
-      });
-
-    console.log("on init query string: ", this.queryString);
-    
+      });    
     this.searchResults = this.searchService.searchResults;
     this.searchService.newSearchResults
     .subscribe(
@@ -38,15 +34,18 @@ export class SearchComponent implements OnInit {
           }else{
             for(let i=0; i< newSearchResults.items.length; i++){
               const thisItem = newSearchResults.items[i];
-              const componentPath = thisItem.path.toString().substring(0,thisItem.path.lastIndexOf("/"));
+               const componentPath = thisItem.path.toString().substring(0,thisItem.path.lastIndexOf("/"));
               const componentNameLowerCase = componentPath.substring(componentPath.lastIndexOf("/")+1);
-              const componentName = componentNameLowerCase.charAt(0).toUpperCase() + componentNameLowerCase.substr(1);
+              if("home about brand gardening space dancing".indexOf(componentNameLowerCase)>-1){
+                console.log("componentNameLowerCase", componentNameLowerCase)
+              const componentName = componentNameLowerCase.charAt(0).toUpperCase() + componentNameLowerCase.substr(1);          
               const pageAddress = "https://dancelife.github.io/One-Search/" + componentName;
-              formattedSearchResults.push(pageAddress);
+                 if(formattedSearchResults.indexOf(pageAddress)<0){
+                  formattedSearchResults.push(pageAddress);
+                }
+             }
             }
-            console.log(formattedSearchResults);            
             this.searchResults = formattedSearchResults;
-
           }
       });
     

@@ -24,6 +24,7 @@ export class NavigationComponent implements OnInit{
 
     OnSearch(){
         this.searchService.runSearch(this.queryString);
+        //console.log(this.queryString);
         this.searchForm.reset();
         //(<FormControl>this.searchForm.controls["queryString"]) = null;
         this.router.navigate(["/Search"]);
