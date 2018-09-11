@@ -1,4 +1,4 @@
-<p *ngIf="!queryString.value">
+<p *ngIf="!queryString.value && !apiLimitedExceeded">
   What about entering something in the search box?
 </p>
 
@@ -9,4 +9,4 @@
 </div>
 </div>
 
-<p *ngIf="apiLimitedExceeded">Limit exceeded. GitHub API has just a small amount of requests per minute.</p>
+<p *ngIf="apiLimitedExceeded">Limit exceeded. GitHub API has just a small amount of requests per minute. Please try again later.</p>
