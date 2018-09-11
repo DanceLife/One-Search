@@ -27,12 +27,10 @@ export class SearchComponent implements OnInit {
       (newSearchResults) =>
       {
         let formattedSearchResults = [];
-        console.log("newSearchResults : ", newSearchResults);
+        this.apiLimitedExceeded = false;
         const message = newSearchResults.message ? newSearchResults.message : null;
          if(message){
             this.apiLimitedExceeded = true;
-            //this.searchResults = message;
-            console.log("Limit exceeded");
           }else{
             for(let i=0; i< newSearchResults.items.length; i++){
               const thisItem = newSearchResults.items[i];
