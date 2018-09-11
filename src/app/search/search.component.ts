@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from './search.service';
+import { UpperCasePipe } from '@angular/common'
 
 @Component({
   selector: 'app-search',
@@ -29,12 +30,23 @@ export class SearchComponent implements OnInit {
     .subscribe(
       (newSearchResults) =>
       {
+        let formattedSearchResults = [];
         const message = newSearchResults.message ? newSearchResults.message : null;
         if(message){
             this.apiLimitedExceeded = true;
             this.searchResults = message;
           }else{
-            this.searchResults = newSearchResults;
+            for(let i=0; i< newSearchResults.items.length; i++){
+              const thisItem = newSearchResults.items[i];
+              const componentPath = thisItem.path.toString().substring(0,thisItem.path.lastIndexOf("/"));
+              const componentNameLowerCase = componentPath.substring(componentPath.lastIndexOf("/")+1);
+              const componentName = componentNameLowerCase.charAt(0).toUpperCase() + componentNameLowerCase.substr(1);
+              const pageAddress = "https://dancelife.github.io/One-Search/" + componentName;
+              formattedSearchResults.push(pageAddress);
+            }
+            console.log(formattedSearchResults);            
+            this.searchResults = formattedSearchResults;
+
           }
       });
     

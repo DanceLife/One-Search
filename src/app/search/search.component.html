@@ -1,18 +1,11 @@
 <p *ngIf="!queryString.value && !searchResults">
-  What about entering something on the search box?
+  What about entering something in the search box?
 </p>
 
-
-<p *ngIf="queryString.value">
-  New entry (Hidden after implementation):  
-</p>
-<p> {{ queryString.value }} </p>
 <div *ngIf="searchResults">
   <p >Search results based on the previous entry </p>
-<p>Total count: {{searchResults.total_count}}</p>
-<p>Incomplete results: {{searchResults.incomplete_results}}</p>
-<div *ngFor="let item of searchResults.items">
-  <a href="{{item.path}}">{{item.path}}</a>
+<div *ngFor="let item of searchResults">
+  <a href="{{item}}">{{item}}</a>
 </div>
 </div>
 
