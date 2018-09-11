@@ -4,20 +4,22 @@ import { OptionsComponent } from './options/options.component';
 import { EnvironmentComponent } from './environment/environment.component';
 import { BrandComponent } from './core/brand/brand.component';
 import { SearchComponent } from './search/search.component';
-import { GardeningComponent } from './gardening/gardening.component';
-import { DancingComponent } from './dancing/dancing.component';
-import { SpaceComponent } from './space/space.component';
+import { GardeningComponent } from './articles/gardening/gardening.component';
+import { DancingComponent } from './articles/dancing/dancing.component';
+import { SpaceComponent } from './articles/space/space.component';
 
 const appRoutes: Routes = [
   {path: "Register", children:[
     {path: "Options",component: OptionsComponent},
     {path: "Environment", component: EnvironmentComponent}
   ]},
+  {path: "Articles", children:[
+    {path: "Gardening", component: GardeningComponent},
+    {path: "Space", component: SpaceComponent},
+    {path: "Dancing", component: DancingComponent}
+  ]},
   {path: "Search", component: SearchComponent},
   {path: "About", component: BrandComponent},
-  {path: "Gardening", component: GardeningComponent},
-  {path: "Space", component: SpaceComponent},
-  {path: "Dancing", component: DancingComponent}
   ];
 
 @NgModule({

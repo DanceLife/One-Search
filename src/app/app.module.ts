@@ -7,9 +7,9 @@ import { OptionsComponent } from './options/options.component';
 import { EnvironmentComponent } from './environment/environment.component';
 import { SearchComponent } from './search/search.component';
 import { HttpModule } from '@angular/http';
-import { GardeningComponent } from './gardening/gardening.component';
-import { SpaceComponent } from './space/space.component';
-import { DancingComponent } from './dancing/dancing.component';
+import { GardeningComponent } from './articles/gardening/gardening.component';
+import { SpaceComponent } from './articles/space/space.component';
+import { DancingComponent } from './articles/dancing/dancing.component';
 
 @NgModule({
   declarations: [
