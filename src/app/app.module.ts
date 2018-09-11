@@ -10,6 +10,7 @@ import { HttpModule } from '@angular/http';
 import { GardeningComponent } from './articles/gardening/gardening.component';
 import { SpaceComponent } from './articles/space/space.component';
 import { DancingComponent } from './articles/dancing/dancing.component';
+import { ArticlesComponent } from './articles/articles.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DancingComponent } from './articles/dancing/dancing.component';
     OptionsComponent,
     EnvironmentComponent,
     SearchComponent,
+    ArticlesComponent,
     GardeningComponent,
     SpaceComponent,
     DancingComponent,
