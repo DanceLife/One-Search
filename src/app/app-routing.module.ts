@@ -15,7 +15,7 @@ const appRoutes: Routes = [
   ]},
   {path: "Articles", children:[
     {path: "Gardening", component: GardeningComponent},
-    {path: "Space", component: SpaceComponent},
+    {path: "Space_Traveling", component: SpaceComponent},
     {path: "Dancing", component: DancingComponent}
   ]},
   {path: "Search", component: SearchComponent},

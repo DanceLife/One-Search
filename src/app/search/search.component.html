@@ -1,11 +1,12 @@
-<p *ngIf="!queryString.value && !searchResults">
+<p *ngIf="!queryString.value">
   What about entering something in the search box?
 </p>
 
-<div *ngIf="searchResults">
+<div *ngIf="searchResults && !apiLimitedExceeded">
 
 <div *ngFor="let item of searchResults">
   <a href="{{item}}">{{item}}</a>
 </div>
 </div>
 
+<p *ngIf="apiLimitedExceeded">Limit exceeded. GitHub API has just a small amount of requests per minute.</p>

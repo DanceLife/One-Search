@@ -18,15 +18,14 @@
                   Articles
                 </a>
                 <div class="dropdown-menu" aria-labelledby="Articles" >
-                  <a class="dropdown-item" routerLink="/Articles/Gardening">Gardening</a>
-                  <a class="dropdown-item" routerLink="/Articles/Space">Space</a>
-                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" routerLink="/Articles/Dancing">Dancing</a>
+                  <a class="dropdown-item" routerLink="/Articles/Gardening">Gardening</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" routerLink="/Articles/Space_Traveling">Space Traveling</a>
                 </div>
               </li>
     </ul>
     <ul class="navbar-nav navbar-right">
-
         <li> 
             <form [formGroup]="searchForm" class="form-inline" (ngSubmit)="OnSearch()" >
                 <input class="form-control one-form-control mr-sm-2 one-search-box" type="search" formControlName="queryString" placeholder="Search site" aria-label="Search">

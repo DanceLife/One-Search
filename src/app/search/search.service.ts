@@ -36,6 +36,10 @@ export class SearchService {
         console.log(response.json());
 
         this.newSearchResults.next(response.json());
+      },
+      (error) =>{
+        console.log("Error : ", error.json())
+        this.newSearchResults.next(error.json())
       }
     );
   }

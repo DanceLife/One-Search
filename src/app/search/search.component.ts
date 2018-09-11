@@ -27,10 +27,12 @@ export class SearchComponent implements OnInit {
       (newSearchResults) =>
       {
         let formattedSearchResults = [];
+        console.log("newSearchResults : ", newSearchResults);
         const message = newSearchResults.message ? newSearchResults.message : null;
-        if(message){
+         if(message){
             this.apiLimitedExceeded = true;
-            this.searchResults = message;
+            //this.searchResults = message;
+            console.log("Limit exceeded");
           }else{
             for(let i=0; i< newSearchResults.items.length; i++){
               const thisItem = newSearchResults.items[i];
@@ -73,7 +75,7 @@ export class SearchComponent implements OnInit {
         componentRoute = "Articles/Gardening";
         break;
         case "Space":
-        componentRoute = "Articles/Space";
+        componentRoute = "Articles/Space_Traveling";
         break;
         case "Dancing":
         componentRoute = "Articles/Dancing";
